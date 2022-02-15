@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h1><%= @pet.name %></h1>
+  <%= link_to "✏️", edit_pet_path(@pet) %>
+  <%#= link_to "🗑", pet_path(@pet), method: :delete %>
+  <%= link_to pet_path(@pet), method: :delete do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
+</div>
