@@ -1,8 +1,19 @@
-<div class="container mt-3">
-  <h1><%= @pet.name %></h1>
-  <%= link_to "✏️", edit_pet_path(@pet) %>
-  <%#= link_to "🗑", pet_path(@pet), method: :delete %>
-  <%= link_to pet_path(@pet), method: :delete do %>
-    <i class="fas fa-trash"></i>
-  <% end %>
+<div class="container mt-5">
+  <p><%= link_to '< Back', pets_path, class: 'btn-light' %></p>
+  <div class="card-product">
+    <%= image_tag "http://source.unsplash.com/featured/?#{@pet.species}&#{rand(1000)}"%>
+    <div class="card-product-infos">
+      <h2><%= @pet.name %></h2>
+      <p><%= @pet.address %></p>
+      <p>Found <%= pluralize(@pet.found_days_ago, 'day') %> ago</p>
+    </div>
+    <div class="d-flex">
+      <%= link_to edit_pet_path(@pet), class: 'btn-light', class: 'card-action card-destroy' do %>
+        <i class="fas fa-pencil-alt"></i>
+      <% end %>
+      <%= link_to pet_path(@pet), method: :delete, data: { confirm: "you sure?" }, class: 'card-action card-edit' do %>
+        <i class="fas fa-times"></i>
+      <% end %>
+    </div>
+  </div>
 </div>

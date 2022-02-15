@@ -1,8 +1,8 @@
 <%= simple_form_for @pet do |f| %>
   <%= f.input :name %>
   <%= f.input :address, input_html: { class: "anything-here"} %>
-  <%= f.input :species, collection: Pet::SPECIES, include_blank: false %>
   <%= f.input :found_on, html5: true %>
+  <%= f.input :species, collection: Pet::SPECIES, include_blank: false %>
   <%= f.input :status, collection: Pet.statuses.keys, include_blank: false %>
   <%= f.submit class: 'btn btn-primary mt-2' %>
 <% end %>

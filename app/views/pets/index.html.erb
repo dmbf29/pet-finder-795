@@ -1,13 +1,13 @@
-<div class="container">
-  <div class="d-flex justify-content-between">
-    <h1>Pets#index</h1>
-    <%= link_to "➕", new_pet_path, class: 'btn btn-light' %>
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <h1>Found Pets</h1>
+    <%= link_to new_pet_path do %>
+      <i class="fas fa-plus-square btn-light"></i>
+    <% end %>
   </div>
-  <% @pets.each do |pet| %>
-    <p><%= link_to pet.name, pet_path(pet) %></p>
-    <p><%= pet.address %></p>
-    <p><%= pet.species %></p>
-    <p><%= pet.status %></p>
-    <p>Found <%= pluralize(pet.found_days_ago, 'day') %> ago</p>
-  <% end %>
+  <div class="cards">
+    <% @pets.each do |pet| %>
+      <%= render 'pets/card', pet: pet %>
+    <% end %>
+  </div>
 </div>
