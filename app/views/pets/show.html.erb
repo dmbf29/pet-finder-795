@@ -1,7 +1,8 @@
 <div class="container mt-5">
   <p><%= link_to '< Back', pets_path, class: 'btn-light' %></p>
   <div class="card-product">
-    <%= image_tag "http://source.unsplash.com/featured/?#{@pet.species}&#{rand(1000)}"%>
+    <%#= image_tag "http://source.unsplash.com/featured/?#{@pet.species}&#{rand(1000)}"%>
+    <%= image_tag "https://loremflickr.com/320/240/#{pet.species}"%>
     <div class="card-product-infos">
       <h2><%= @pet.name %></h2>
       <p><%= @pet.address %></p>
